@@ -1,46 +1,26 @@
-`slex` is a simple lexer (also called scanner, or lexical analyzer).
+/// slex - a simple lexer
+/// (c) 2023 by Andreas Schwenk <mailto:contact@compiler-construction.com>
+/// License: GPL-3.0-or-later
 
-## Features
-
-- Indentation based scanning (similar to Python)
-- C like scanning
-- scanning of nested source files.
-- configuration options: single line comments, multiline comments, enable/disable emitting of newline / hex numbers / integers / real numbers / big integers / single quotes / double quotes / indentation / backslash line breaks for indented code / umlaute / underscores in identifiers
-
-## Getting started
-
-Add the package into your package's `pubspec.yaml` file:
-
-```yaml
-dependencies:
-  slex: ^0.0.1
-```
-
-Make sure to use the latest version!
-
-## Usage
-
-The example writes a parser for for following formal grammar specified in EBNF:
-
-```
-program = { assignment };
-assignment = IDENTIFIER ":=" add ";";
-add = mul { "+" mul };
-mul = unary { "*" unary };
-unary = IDENTIFIER | INTEGER | "(" add ")";
-```
-
-A valid example program is for example:
-
-```
-# comment
-x := 3 * (4+5);
-```
-
-Implementation:
-
-```dart
 import 'package:slex/slex.dart';
+
+/// This file uses slex to write a parser for the following formal grammar,
+/// specified in EBNF:
+///
+///     program = { assignment };
+///     assignment = IDENTIFIER ":=" add ";";
+///     add = mul { "+" mul };
+///     mul = unary { "*" unary };
+///     unary = IDENTIFIER | INTEGER | "(" add ")";
+///
+/// A valid example program is for example:
+///
+///     # comment
+///     x := 3 * (4+5);
+///
+/// The examples writes a sequence of operations and operands in prefix order:
+///
+///     x 3 4 5 add mul assign
 
 void main() {
   var src = '# comment\nx := 3 * (4+5);\n';
@@ -115,4 +95,3 @@ void parseUnary(Lexer lexer) {
     lexer.error('expected ID or INT');
   }
 }
-```

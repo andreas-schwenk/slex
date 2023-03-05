@@ -1,0 +1,15 @@
+# slex - a simple lexer
+# (c) 2023 by Andreas Schwenk <mailto:contact@compiler-construction.com>
+# License: GPL-3.0-or-later
+
+name: slex
+description: Simple and configurable lexer for tokenization by Andreas Schwenk.
+version: 0.0.1
+repository: https://github.com/andreas-schwenk/slex
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.21.0

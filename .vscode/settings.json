@@ -1,0 +1,17 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "Dart-Code.dart-code",
+  "cSpell.language": "en,de-de",
+  "cSpell.words": [
+    "Andreas",
+    "EBNF",
+    "FILEPOS",
+    "multichar",
+    "outdentation",
+    "Outdentation",
+    "pubspec",
+    "Schwenk",
+    "slex",
+    "Üäöüß"
+  ]
+}
