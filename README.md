@@ -13,7 +13,7 @@ Add the package into your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  slex: ^0.9.0
+  slex: ^0.9.1
 ```
 
 Make sure to use the latest version!
