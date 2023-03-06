@@ -4,4 +4,7 @@
 
 library slex;
 
+export 'src/token.dart';
+export 'src/state.dart';
+export 'src/lang.dart';
 export 'src/slex_base.dart';
