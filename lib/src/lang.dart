@@ -2,8 +2,10 @@
 /// (c) 2023 by Andreas Schwenk <mailto:contact@compiler-construction.com>
 /// License: GPL-3.0-or-later
 
+/// The available languages for error messages.
 enum Language { english, german }
 
+/// The available predefined error message types.
 enum LanguageText {
   expected,
   expectedOneOf,
@@ -13,12 +15,15 @@ enum LanguageText {
   binaryOperatorIncompatibleTypes
 }
 
+/// The currently selected language for error messages.
 var lang = Language.english;
 
+/// Sets the currently selected language for error messages.
 void setLanguage(Language l) {
   lang = l;
 }
 
+/// Gest an error messgage string, defined in the current language [lang].
 String getStr(LanguageText str) {
   switch (lang) {
     case Language.english:

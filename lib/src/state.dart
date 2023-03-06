@@ -4,6 +4,7 @@
 
 import 'token.dart';
 
+/// Describes the state of the lexer.
 class LexerState {
   /// The current character index.
   int i = 0;
@@ -26,6 +27,7 @@ class LexerState {
   /// The tokens that must be put in subsequent next()-calls.
   List<LexerToken> stack = [];
 
+  /// Clones the object.
   LexerState copy() {
     var bak = LexerState();
     bak.i = i;
