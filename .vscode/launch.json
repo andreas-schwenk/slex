@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "dart",
+      "name": "run tests",
+      "request": "launch",
+      "program": "${workspaceFolder}/test/slex_test.dart",
+      "console": "terminal"
+    }
+  ]
+}
